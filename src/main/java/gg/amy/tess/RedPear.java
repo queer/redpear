@@ -43,6 +43,7 @@ public enum RedPear {
         commands.put("help", new CommandHelp());
         commands.put("tato", new CommandTato());
         commands.put("pat", new CommandPat());
+        commands.put("hug", new CommandHug());
         
         jda = new JDABuilder(AccountType.BOT)
                 .setToken(System.getenv("TOKEN"))
