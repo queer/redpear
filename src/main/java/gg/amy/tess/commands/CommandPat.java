@@ -22,8 +22,8 @@ public class CommandPat extends Command {
         if(mentions.isEmpty()) {
             event.getChannel().sendMessage("\\*pat\\* You must be pretty lonely if you do this :(").queue();
         } else {
-            final String names = String.join(", ", msg.getMentionedUsers().stream()
-                    .map(e -> "**" + e.getName() + "**").collect(Collectors.toList()));
+            final String names = String.join(", ", mentions.stream().map(e -> "**" + e.getName() + "**")
+                    .collect(Collectors.toList()));
             event.getChannel().sendMessage(names + ", you were just patted by **" + msg.getAuthor().getName() + "**!")
                     .queue();
         }

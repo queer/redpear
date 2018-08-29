@@ -24,8 +24,8 @@ public class CommandTato extends Command {
         if(mentions.isEmpty()) {
             event.getChannel().sendMessage("Here's a tato: :potato:").queue();
         } else {
-            final String names = String.join(", ", msg.getMentionedUsers().stream()
-                    .map(e -> "**" + e.getName() + "**").collect(Collectors.toList()));
+            final String names = String.join(", ", mentions.stream().map(e -> "**" + e.getName() + "**")
+                    .collect(Collectors.toList()));
             event.getChannel().sendMessage(names + ", **" + msg.getAuthor().getName() + "** gave you a tato: :potato:")
                     .queue();
         }
