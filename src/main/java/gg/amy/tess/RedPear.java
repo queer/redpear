@@ -42,6 +42,7 @@ public enum RedPear {
         commands.put("ping", new CommandPing());
         commands.put("help", new CommandHelp());
         commands.put("tato", new CommandTato());
+        commands.put("tess", new CommandTess());
         commands.put("pat", new CommandPat());
         commands.put("hug", new CommandHug());
         
