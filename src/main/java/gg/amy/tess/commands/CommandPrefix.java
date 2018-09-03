@@ -11,6 +11,6 @@ import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 public class CommandPrefix extends Command {
     @Override
     public void runCommand(final GuildMessageReceivedEvent event) {
-        event.getChannel().sendMessage(RedPear.INSTANCE.getPrefix()).queue();
+        event.getChannel().sendMessage(String.join(" or ", RedPear.INSTANCE.getPrefixes())).queue();
     }
 }

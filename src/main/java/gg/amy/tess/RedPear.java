@@ -9,9 +9,7 @@ import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * @author amy
@@ -22,7 +20,11 @@ public enum RedPear {
     INSTANCE;
     
     @Getter
-    private final String prefix = "<@484313304509054986>";
+    private final List<String> prefixes = Arrays.asList(
+            "<@484313304509054986>",
+            "\uD83D\uDD34 \uD83C\uDF50",
+            "\uD83D\uDD34\uD83C\uDF50"
+    );
     
     @Getter
     private final Map<String, Command> commands = new HashMap<>();
@@ -59,7 +61,14 @@ public enum RedPear {
                                 event.getChannel().sendMessage("<@!107563269484490752>").queue();
                                 return;
                             }
-                            if(!event.getMessage().getContentRaw().startsWith(prefix)) {
+                            String prefix = null;
+                            for(final String p : prefixes) {
+                                if(event.getMessage().getContentRaw().startsWith(p)) {
+                                    prefix = p;
+                                    break;
+                                }
+                            }
+                            if(prefix == null) {
                                 return;
                             }
                             final String msg = event.getMessage().getContentRaw().replaceFirst(prefix, "").trim();
