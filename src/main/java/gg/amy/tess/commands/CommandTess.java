@@ -25,6 +25,15 @@ public class CommandTess extends Command {
             "Donate to my pat-reon",
             "I eat your potatoes",
             "amy#0001 have potatoes :potato:",
+            "PURPLE!!",
+            "Ham",
+            "Don't call it pear again :p",
+            "Big red bridge! (I thought it was orange)",
+            "Sarah what are yo- oh I know that bit",
+            "\"when?\" \"Right now!\"",
+            "Tatos for everyone",
+            "All pat equal",
+            "(in response to \"are waifus real?\") If they were, they still wouldn't love American otakus ｗｗｗ",
     };
     
     private final Random random = new Random();
