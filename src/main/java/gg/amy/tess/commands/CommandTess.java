@@ -34,6 +34,7 @@ public class CommandTess extends Command {
             "Tatos for everyone",
             "All pat equal",
             "(in response to \"are waifus real?\") If they were, they still wouldn't love American otakus ｗｗｗ",
+            "Have to go is still class bye bye",
     };
     
     private final Random random = new Random();
