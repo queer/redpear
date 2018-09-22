@@ -7,6 +7,7 @@ import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
+import net.dv8tion.jda.core.utils.cache.CacheFlag;
 
 import javax.security.auth.login.LoginException;
 import java.util.*;
@@ -50,6 +51,7 @@ public enum RedPear {
         
         jda = new JDABuilder(AccountType.BOT)
                 .setToken(System.getenv("TOKEN"))
+                .setDisabledCacheFlags(EnumSet.of(CacheFlag.GAME, CacheFlag.EMOTE, CacheFlag.VOICE_STATE))
                 .addEventListener(new ListenerAdapter() {
                     @Override
                     public void onGuildMessageReceived(final GuildMessageReceivedEvent event) {
