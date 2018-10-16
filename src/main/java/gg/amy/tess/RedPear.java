@@ -59,10 +59,6 @@ public enum RedPear {
                             if(event.getAuthor().isBot()) {
                                 return;
                             }
-                            if(event.getMessage().getContentRaw().equalsIgnoreCase("pls pingmax")) {
-                                event.getChannel().sendMessage("<@!107563269484490752>").queue();
-                                return;
-                            }
                             String prefix = null;
                             for(final String p : prefixes) {
                                 if(event.getMessage().getContentRaw().startsWith(p)) {
