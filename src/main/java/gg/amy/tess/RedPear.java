@@ -41,6 +41,7 @@ public enum RedPear {
     
     private void start() throws LoginException, InterruptedException {
         commands.put("prefix", new CommandPrefix());
+        commands.put("stats", new CommandStats());
         commands.put("eval", new CommandEval());
         commands.put("ping", new CommandPing());
         commands.put("help", new CommandHelp());
